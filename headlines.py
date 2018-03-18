@@ -1,8 +1,10 @@
 from flask import Flask
 
-from database import db_session
+from database import db_session, init_db
 
 app = Flask(__name__)
+
+init_db()
 
 
 @app.teardown_appcontext
