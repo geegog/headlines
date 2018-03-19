@@ -1,8 +1,12 @@
 from flask import Flask
 
 from database import db_session, init_db
+from controllers import newspaper
 
 app = Flask(__name__)
+
+app.register_blueprint(newspaper.get_company)
+app.register_blueprint(newspaper.save_company)
 
 init_db()
 
