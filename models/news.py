@@ -1,3 +1,4 @@
+import datetime
 from sqlalchemy import Column, Integer, String, DATETIME, ForeignKey
 from sqlalchemy.orm import relationship
 
@@ -16,7 +17,7 @@ class News(Base):
     company = relationship("Company", back_populates="news")
     category = relationship("Category", back_populates="news")
 
-    def __init__(self, headline=None, link=None, created=None, company_id=None, category_id=None):
+    def __init__(self, headline=None, link=None, created=datetime.datetime.now(), company_id=None, category_id=None):
         self.headline = headline
         self.link = link
         self.created = created

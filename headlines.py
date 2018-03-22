@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 app.register_blueprint(newspaper.get_company)
 app.register_blueprint(newspaper.save_company)
+app.register_blueprint(newspaper.get_all_companies)
 
 app.register_blueprint(categories.save_category)
 app.register_blueprint(categories.get_all_categories)

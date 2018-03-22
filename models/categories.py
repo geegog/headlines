@@ -1,4 +1,5 @@
-from sqlalchemy import Column, Integer, String, DATETIME, ForeignKey
+import datetime
+from sqlalchemy import Column, Integer, String, DATETIME
 
 from headlines.database import Base
 
@@ -6,10 +7,10 @@ from headlines.database import Base
 class Category(Base):
     __tablename__ = 'categories'
     id = Column(Integer, primary_key=True)
-    name = Column(String(50))
+    name = Column(String(50), unique=True)
     created = Column(DATETIME())
 
-    def __init__(self, name=None, created=None):
+    def __init__(self, name=None, created=datetime.datetime.now()):
         self.name = name
         self.created = created
 
