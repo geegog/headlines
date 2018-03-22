@@ -24,6 +24,16 @@ class News(Base):
         self.company_id = company_id
         self.category_id = category_id
 
+    def serialize(self):
+        return {
+            'id': self.id,
+            'headline': self.headline,
+            'link': self.link,
+            'created': self.created,
+            'company_id': self.company_id,
+            'category_id': self.category_id
+        }
+
     def __repr__(self):
         return '<Link %r>' % self.link
 
