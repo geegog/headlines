@@ -1,12 +1,7 @@
 import datetime
 from sqlalchemy import Column, Integer, String, DATETIME, ForeignKey
-from sqlalchemy.orm import relationship
 
 from headlines.database import Base
-
-from headlines.models.newpaper import Company
-
-from headlines.models.categories import Category
 
 
 class News(Base):
