@@ -10,7 +10,6 @@ class Category(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(50), unique=True)
     created = Column(DATETIME())
-    news = relationship("News")
 
     def __init__(self, name=None, created=datetime.datetime.now()):
         self.name = name
@@ -24,5 +23,9 @@ class Category(Base):
         }
 
     def __repr__(self):
-        return '<Name %r>' % self.name
+        return {
+            'id': self.id,
+            'name': self.name,
+            'created': self.created,
+        }
 

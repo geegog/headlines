@@ -13,6 +13,8 @@ app.register_blueprint(categories.save_category)
 app.register_blueprint(categories.get_all_categories)
 
 app.register_blueprint(news.save_news)
+app.register_blueprint(news.get_all_news)
+app.register_blueprint(news.get_news_by_category)
 
 init_db()
 

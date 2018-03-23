@@ -11,7 +11,6 @@ class Company(Base):
     name = Column(String(50), unique=True)
     created = Column(DATETIME())
     email = Column(String(50), unique=True)
-    news = relationship("News")
 
     def __init__(self, name=None, email=None, created=datetime.datetime.now()):
         self.name = name
